@@ -1,0 +1,27 @@
+class MaxSumSubArrayOfSizeK {
+  public static int findMaxSumSubArray(int k, int[] arr) {
+
+
+     int winstart = 0;
+     int winend = 0;
+     int cur_win_sum = 0;
+
+     while (k > 0) {
+       cur_win_sum += arr[winend];
+       winend++;
+       k--;
+     }
+    int max_sum = cur_win_sum;
+
+    while(winend < arr.length) {
+      cur_win_sum -= arr[winstart];
+      winstart++;
+      cur_win_sum += arr[winend];
+      winend++;
+      max_sum = max_sum < cur_win_sum ? cur_win_sum : max_sum;
+    }
+
+    return max_sum;
+
+  }
+}
