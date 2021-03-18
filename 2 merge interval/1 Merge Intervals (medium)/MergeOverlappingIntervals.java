@@ -19,7 +19,7 @@ class Interval {
   }
 };
 
-class MergeIntervals {
+class MergeOverlappingIntervals {
 
   public static List<Interval> mergeIntervals(List<Interval> intervals) {
     List<Interval> sortedList = 
